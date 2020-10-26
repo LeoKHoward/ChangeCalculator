@@ -11,7 +11,7 @@ public interface ChangeCalculator {
         } else if (moneyPaidGbp >= totalCostGbp) {
             System.out.println("\nYour change will be: £" + ((moneyPaidGbp - totalCostGbp) / 100));
 
-            ChangeCalculatorApplication.BankNoteOrCoin[] gbpBankNotesOrCoins = new ChangeCalculatorApplication.BankNoteOrCoin[]{
+            BankNoteOrCoin[] gbpBankNotesOrCoins = new BankNoteOrCoin[]{
                     new ChangeCalculatorApplication.BankNoteOrCoin(50, " £50 note(s)"),
                     new ChangeCalculatorApplication.BankNoteOrCoin(20, " £20 note(s)"),
                     new ChangeCalculatorApplication.BankNoteOrCoin(10, " £10 note(s)"),
@@ -42,7 +42,7 @@ public interface ChangeCalculator {
         } else if (moneyPaidUsd >= totalCostUsd) {
             System.out.println("\nYour change will be: $" + ((moneyPaidUsd - totalCostUsd) / 100));
 
-            ChangeCalculatorApplication.BankNoteOrCoin[] usdBankNotesOrCoins = new ChangeCalculatorApplication.BankNoteOrCoin[]{
+            BankNoteOrCoin[] usdBankNotesOrCoins = new BankNoteOrCoin[]{
                     new ChangeCalculatorApplication.BankNoteOrCoin(100, " $100 note(s)"),
                     new ChangeCalculatorApplication.BankNoteOrCoin(50, " $50 note(s)"),
                     new ChangeCalculatorApplication.BankNoteOrCoin(20, " $20 note(s)"),
@@ -62,9 +62,9 @@ public interface ChangeCalculator {
         }
     }
 
-    static void bankNoteOrCoin(double changeUsd, ChangeCalculatorApplication.BankNoteOrCoin[] usdBankNotesOrCoins) {
+    static void bankNoteOrCoin(double changeUsd, BankNoteOrCoin[] usdBankNotesOrCoins) {
 
-        for (ChangeCalculatorApplication.BankNoteOrCoin bankNoteOrCoin : usdBankNotesOrCoins) {
+        for (BankNoteOrCoin bankNoteOrCoin : usdBankNotesOrCoins) {
             int noteOrCoinTotal = (int) ((int) changeUsd / bankNoteOrCoin.value);
             if (noteOrCoinTotal > 0) {
                 changeUsd = changeUsd % (int) (bankNoteOrCoin.value * 100);

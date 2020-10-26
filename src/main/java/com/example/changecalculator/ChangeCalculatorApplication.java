@@ -12,14 +12,4 @@ public class ChangeCalculatorApplication implements ChangeCalculator {
 
     }
 
-    public static class BankNoteOrCoin {
-        public final double value;
-        public final String description;
-
-        public BankNoteOrCoin(double value, String description) {
-            this.value = value;
-            this.description = description;
-        }
-    }
-
 }

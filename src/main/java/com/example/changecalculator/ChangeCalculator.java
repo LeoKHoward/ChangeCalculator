@@ -26,7 +26,7 @@ public interface ChangeCalculator {
                     new ChangeCalculatorApplication.BankNoteOrCoin(0.01, " 1p coin(s)")
             };
 
-            ChangeCalculatorApplication.bankNoteOrCoin(changeGbp, gbpBankNotesOrCoins);
+            bankNoteOrCoin(changeGbp, gbpBankNotesOrCoins);
 
         } else {
             System.out.println("\nNot enough money you cheap bastard!");
@@ -55,10 +55,21 @@ public interface ChangeCalculator {
                     new ChangeCalculatorApplication.BankNoteOrCoin(0.01, " one cent coin(s)")
             };
 
-            ChangeCalculatorApplication.bankNoteOrCoin(changeUsd, usdBankNotesOrCoins);
+            bankNoteOrCoin(changeUsd, usdBankNotesOrCoins);
 
         } else {
             System.out.println("\nNot enough money you cheap bastard!");
+        }
+    }
+
+    static void bankNoteOrCoin(double changeUsd, ChangeCalculatorApplication.BankNoteOrCoin[] usdBankNotesOrCoins) {
+
+        for (ChangeCalculatorApplication.BankNoteOrCoin bankNoteOrCoin : usdBankNotesOrCoins) {
+            int noteOrCoinTotal = (int) ((int) changeUsd / bankNoteOrCoin.value);
+            if (noteOrCoinTotal > 0) {
+                changeUsd = changeUsd % (int) (bankNoteOrCoin.value * 100);
+                System.out.println(noteOrCoinTotal / 100 + bankNoteOrCoin.description);
+            }
         }
     }
 }

@@ -97,12 +97,13 @@
 //    }
 //
 //    @Test
-//    public void testDontThrowErrorKnownCharacterEnteredAsCurrency() {
+//    public void testDontThrowErrorKnownCharacterEnteredAsCurrency() throws Exception {
 //
-//        ChangeCalculatorApplication testChangeCalculatorApplication = new ChangeCalculatorApplication();
+//        ChangeCalculatorService knownCurrency = new ChangeCalculatorService();
 //
 //        String goodCharacter = "£";
-//        !assertEquals(goodCharacter, testChangeCalculatorApplication.getCurrencyType().toString("!"));
+//        String errorMessage = "Invalid currency type entered!";
+//        assertDoesNotThrow(() -> ChangeCalculatorService.class());
 //
 //
 //    }

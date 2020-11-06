@@ -1,14 +1,13 @@
 package com.example.changecalculator;
 
-import java.util.Scanner;
+import com.example.changecalculator.presentation.UserInterface;
 
-public class ChangeCalculatorApplication implements ChangeCalculator {
+public class ChangeCalculatorApplication {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
-        new Scanner(System.in);
-
-        new ChangeCalculatorService();
+        UserInterface userInterface = new UserInterface();
+        userInterface.run();
 
     }
 

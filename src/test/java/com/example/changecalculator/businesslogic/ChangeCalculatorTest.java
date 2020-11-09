@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ChangeCalculatorTest {
 
     @Test
-    void workoutChangeInGbp() {
+    void testWorkoutChangeInGbp() {
         ChangeCalculator changeCalculator = new ChangeCalculator("£");
 
         List<ChangeItem> results = changeCalculator.workoutChange(0.01, 999.99);
@@ -55,7 +55,7 @@ class ChangeCalculatorTest {
     }
 
     @Test
-    void workoutChangeInUsd() {
+    void testWorkoutChangeInUsd() {
         ChangeCalculator changeCalculator = new ChangeCalculator("$");
 
         List<ChangeItem> results = changeCalculator.workoutChange(0.01, 999.99);

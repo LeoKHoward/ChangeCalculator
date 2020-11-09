@@ -2,6 +2,8 @@ package com.example.changecalculator.presentation;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -20,32 +22,6 @@ class UserInterfaceTest {
         assertEquals("Invalid currency type entered!", exception.getMessage());
     }
 
-//    @Test
-//    void testNonDoubleValueEntered() {
-//
-//        Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
-//                    UserInterface nonDoubleValue = new UserInterface(new InputAndOutputToScreen());
-//                    nonDoubleValue.inputValue("abc");
-//                }
-//        );
-//
-//        assertEquals("Please enter a correct value!", exception.getMessage());
-//    }
-
-    @Test
-    void testNonDoubleValueEntered() {
-
-        InputAndOutput mockIo = mock(InputAndOutput.class);
-
-        UserInterface nonDoubleValue = new UserInterface(mockIo);
-
-        String expectedOutput = "Please enter a correct value!";
-
-        nonDoubleValue.inputValue();
-
-        verify(mockIo).output(expectedOutput);
-
-    }
 
     @Test
     public void testOutputMessageIfPaymentEqualsCost() {
